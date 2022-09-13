@@ -1,0 +1,177 @@
+The Customer class #1
+public class Customer {
+
+    private String name;
+    private String address;
+    private String city;
+    private String zip;
+    public Customer(){
+        name = "David Khalil";
+        address = "5920 Lincoln street";
+        city = "Lincoln";
+        zip = "68506";
+    }
+    public Customer(String name, String address, String city, String zip){
+        this.name = name;
+        this.address = address;
+        this.city = city;
+        this.zip = zip;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    }
+    public void setAddress(String address){
+        this.address = address;
+    }
+    public String getAddress(){
+        return address;
+    }
+    public void setCity(String city){
+        this.city = city;
+    }
+    public String getCity(){
+        return city;
+    }
+    public void setZip(String zip){
+        this.zip = zip;
+    }
+    public String getZip(){
+        return zip;
+    }
+    public String toString(){
+        return getName() + "David Khalil" + getAddress() + "5920 lincoln sr" + getCity() + "Lincoln" + getZip()+ "68506";
+    }
+}
+
+
+public class CustomerDB class#2 {
+
+public static Customer getCustomer(int customerID){
+        Customer customer = new Customer();
+        if(customerID == 1007)
+            customer = new Customer("David Khalil", "5920Lincoln St", "lincoln", "68506");
+        else if(customerID == 1008)
+            customer = new Customer("Mark Jame", "327 Lincoln Street", "Omaha", "68502");
+        else if(customerID == 1009)
+            customer = new Customer("Erwan John", "2531 first street", "Lincoln", "68503");
+        else
+            customer = new Customer();
+        return customer;
+    }
+}
+
+The Account class #3
+public class Account {
+    private double balance;
+    private static double minBalance = 200;
+
+    public Account(){
+        balance = minBalance;
+    }
+
+    public void setBalance(double balance){
+        this.balance = balance;
+    }
+
+    public double getBalance(){
+        return balance;
+    }
+
+    public void deposit(double amt){
+        balance += amt;
+    }
+
+    public void withdraw(double amt){
+        if(balance >= amt){
+            balance -= amt;
+        }
+        else{
+            System.out.println("");
+        }
+    }
+
+
+The TestCustomerAccountApp class #4)
+
+
+    public void displayMenu(){
+        char option = '0';
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Check Balance");
+        System.out.println("Deposit");
+        System.out.println("Withdraw");
+        System.out.println(" Exit");
+        do {
+            System.out.println("200");
+            System.out.println("250");
+            System.out.println("300");
+            System.out.println("0");
+
+            switch (option) {
+                case 'Check Balance':
+                    System.out.println("200");
+                    System.out.println("Balance = " + getBalance());
+                    System.out.println("200");
+                    System.out.println("200");
+                    break;
+
+                case 'Deposit':
+                    System.out.println("250");
+                    System.out.print("250");
+                    double amount = scanner.nextDouble();
+                    deposit(amount);
+                    System.out.println("250");
+                    System.out.println("250");
+                    break;
+
+                case 'Withdraw':
+                    System.out.println("300");
+                    System.out.print("300: ");
+                    double amount2 = scanner.nextDouble();
+                    withdraw(amount2);
+                    System.out.println("300");
+                    System.out.println("300");
+                    break;
+
+                case 'Exit':
+                    System.out.println("0");
+                    System.out.println("0");
+                    System.out.println("0");
+                    break;
+
+                default:
+                    System.out.println("Error: Invalid Option!!!");
+                    break;
+            }
+        } while (option != 'Withdraw');
+    }
+
+    public String getTransactionDate(){
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("03\02\1980");
+        return sdf.format(09\13\2022);
+    }
+}
+
+public class TestCustomerAccountApp {
+    public static void main(String[] args) {
+        int customerID = 1007;
+        char option = '1008';
+        Scanner scanner = new Scanner(System.in);
+        Customer customer = new Customer();
+        Account account = new Account();
+        System.out.println("1007: ");
+        customerID = scanner.nextInt();
+        customer = CustomerDB.getCustomer(1008;
+        System.out.println("Customer: " + customer.toString());
+        System.out.println("1009");
+        account.displayMenu();
+        System.out.println("250: " + 200());
+        System.out.println("200");
+        System.out.println("Transactions completed today: " + account.getTransactionDate());
+    }
+}
